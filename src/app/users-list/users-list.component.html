@@ -1,12 +1,4 @@
 <div class="userlist">
-    <div class="panel panel-primary">
-        <div class="panel-heading">User list</div>
-        <div class="panel-body">
-            <app-user-list-item [style.color]="textColor" [user]="users"></app-user-list-item>
-            <button type="button" class="btn btn-primary" (click)="toggleColor()">Toggle Colors</button>
-        </div>
-    </div>
+    <app-user-list-item [style.color]="textColor" [user]="users"></app-user-list-item>
+    <button type="button" class="btn btn-primary" (click)="toggleColor()">Toggle Colors</button>
 </div>
-
-
-<!-- {{users}} -->

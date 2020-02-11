@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
   }
 
   removeUserFunc() {
-    this.userList.pop()
+    this.userList.shift()
   }
 
 }

@@ -10,7 +10,6 @@ export class UserListItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log('Available in userListItem ', this.user)
   }
 
 }

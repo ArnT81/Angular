@@ -10,11 +10,11 @@ export class UsersListComponent implements OnInit {
 
   textColor: string = 'red';
   bool: boolean = false;
+  
   constructor() {
   }
 
   ngOnInit() {
-    console.log('Available in UsersList ', this.users)
   }
 
   toggleColor() {

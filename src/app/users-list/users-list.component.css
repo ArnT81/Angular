@@ -2,15 +2,13 @@
 position: absolute;
 top: 100px;
 left: 150px;
-width: 200px;
-height: 200px;
+width: 250px;
+background: rgb(236, 236, 236);
+border-radius: 5px;
+padding: 20px;
 }
     
 .btn {
 position: relative;
 width: 100%;
-}
-    
-.panel-body {
-background-color: rgb(236, 236, 236);
 }

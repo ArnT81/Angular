@@ -9,7 +9,7 @@ export class EditUsersComponent implements OnInit {
   @Output() addUserEvent = new EventEmitter<string>();
   @Output() removeUserEvent = new EventEmitter<string>();
 
-  public addUsers: string = "";
+  public clearInput: string = "";
 
   constructor() { }
 
@@ -18,7 +18,7 @@ export class EditUsersComponent implements OnInit {
 
   add(value: string) {
     this.addUserEvent.emit(value)
-    this.addUsers = "";
+    this.clearInput = "";
   }
 
   remove() {
