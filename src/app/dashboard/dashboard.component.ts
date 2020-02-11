@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+  * @variable declares the userList array that is used in rest of the app
+  * @recieves events from child app-edit-user 
+*/
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

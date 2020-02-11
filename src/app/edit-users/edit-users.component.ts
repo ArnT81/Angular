@@ -5,6 +5,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   templateUrl: './edit-users.component.html',
   styleUrls: ['./edit-users.component.css']
 })
+
+/**
+  * @variable declares single variable used only to empty the inputfield after usage
+  * @emit events to parent, app-dashboar for manipulation of userList array 
+*/ 
+
 export class EditUsersComponent implements OnInit {
   @Output() addUserEvent = new EventEmitter<string>();
   @Output() removeUserEvent = new EventEmitter<string>();
