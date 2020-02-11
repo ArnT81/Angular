@@ -1,1 +1,11 @@
-<p>dashboard works!</p>
+Dashboard componenet
+
+<app-users-list [users]="userList"></app-users-list>
+<app-edit-users (addUserEvent)="addUserfunc($event)" (newItemEvent)="addItem($event)"></app-edit-users>
+<ul>
+    <li *ngFor="let user of userList">{{user}}</li>
+</ul>
+
+<!-- <ul>
+    <li *ngFor="let item of items">{{item}}</li>
+</ul> -->
