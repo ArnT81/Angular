@@ -7,8 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class EditUsersComponent implements OnInit {
   @Output() addUserEvent = new EventEmitter<string>();
-  @Output() removeUser = new EventEmitter<string>();
-  @Output() newItemEvent = new EventEmitter<string>();
+  @Output() removeUserEvent = new EventEmitter<string>();
 
   constructor() { }
 
@@ -19,15 +18,7 @@ export class EditUsersComponent implements OnInit {
     this.addUserEvent.emit(value)
   }
 
-  remove(value: string) {
-    this.removeUser.emit(value)
+  remove() {
+    this.removeUserEvent.emit()
   }
-
-
-  addNewItem(value: string) {
-    this.newItemEvent.emit(value);
-  }
-
-
-
 }

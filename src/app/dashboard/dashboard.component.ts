@@ -12,16 +12,12 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  addUserfunc(addUser: string) {
+  addUserFunc(addUser: string) {
     this.userList.push(addUser);
   }
 
-
-
-  items = ['item1', 'item2', 'item3', 'item4'];
-
-  addItem(newItem: string) {
-    this.items.push(newItem);
+  removeUserFunc() {
+    this.userList.pop()
   }
 
 }
