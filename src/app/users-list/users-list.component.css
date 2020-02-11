@@ -1,0 +1,16 @@
+.userlist {
+position: absolute;
+top: 100px;
+left: 150px;
+width: 200px;
+height: 200px;
+}
+    
+.btn {
+position: relative;
+width: 100%;
+}
+    
+.panel-body {
+background-color: rgb(236, 236, 236);
+}

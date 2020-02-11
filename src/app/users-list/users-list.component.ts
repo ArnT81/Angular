@@ -7,6 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UsersListComponent implements OnInit {
   @Input() users: string[]
+
+  textColor: string = 'red';
+  bool: boolean = false;
   constructor() {
   }
 
@@ -14,4 +17,12 @@ export class UsersListComponent implements OnInit {
     console.log('Available in UsersList ', this.users)
   }
 
+  toggleColor() {
+    if (this.bool = !this.bool) {
+      this.textColor = 'green';
+    }
+    else {
+      this.textColor = 'red';
+    }
+  }
 }

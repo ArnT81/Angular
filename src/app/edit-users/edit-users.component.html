@@ -1,3 +1,13 @@
-<input #newUser>
-<button (click)="add(newUser.value)">Add</button>
-<button (click)="remove()">Remove</button>
+<div class="editusers">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Edit user</div>
+        <div class="panel-body">
+            <div class="input">
+                <input type="text" [(ngModel)]="addUsers" #newUser class="form-control"
+                    placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <button type="button" class="btn btn-success" (click)="add(newUser.value)">Add</button>
+            <button type="button" class="btn btn-danger" (click)="remove()">Remove</button>
+        </div>
+    </div>
+</div>
