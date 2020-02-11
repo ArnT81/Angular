@@ -17,7 +17,8 @@ export class EditUsersComponent implements OnInit {
 
   public clearInput: string = "";
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
