@@ -2,6 +2,4 @@ Dashboard componenet
 
 <app-users-list [users]="userList"></app-users-list>
 <app-edit-users (addUserEvent)="addUserFunc($event)" (removeUserEvent)="removeUserFunc($event)"></app-edit-users>
-<ul>
-    <li *ngFor="let user of userList">{{user}}</li>
-</ul>
+
