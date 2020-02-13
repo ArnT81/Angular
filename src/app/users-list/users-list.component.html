@@ -1,4 +1,6 @@
 <div class="userlist">
-    <app-user-list-item [style.color]="textColor" [user]="users"></app-user-list-item>
+    <app-user-list-item [style.color]="textColor" [user]="user" *ngFor="let user of users" class="userListItems">
+        <ul></ul>
+    </app-user-list-item>
     <button type="button" class="btn btn-primary" (click)="toggleColor()">Toggle Colors</button>
 </div>
