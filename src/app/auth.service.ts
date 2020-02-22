@@ -5,6 +5,8 @@ import { AdminFull } from './models/admin-full.model';
   providedIn: 'root'
 })
 export class AuthService {
+  loggedUser:string;
+
   public admins: AdminFull[] = [
     {
       firstName: 'John',
@@ -20,6 +22,17 @@ export class AuthService {
     }
   ];
 
-
   constructor() { }
+
+  checkIfLoggedIn() {
+
+  }
+
+  login() {
+
+  }
+
+  logout() {
+
+  }
 }
