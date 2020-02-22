@@ -1,0 +1,13 @@
+.nav {
+    background: #304151;
+}
+
+.nav-link {
+color: white;
+font-weight: bolder;
+opacity: 60%;
+}
+
+a:active {
+    opacity: 100%;
+}
