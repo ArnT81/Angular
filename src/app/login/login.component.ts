@@ -7,19 +7,19 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  userName: string;
-  userIsLoggedIn: boolean = false
 
-  constructor(private loggedUser: AuthService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
 
   }
 
-  login() {
-    this.loggedUser.login()
-    console.log(this.userName)
-    this.userIsLoggedIn = true;
+  login(): void {
+    this.authService.login('John Doe')
+  }
+
+  logout(): void {
+    this.authService.logout()
   }
 
 }

@@ -23,20 +23,20 @@ export class AuthService {
   ];
 
   constructor() {
-    console.log('login injected')
+    console.log('login injected');
   }
 
   checkIfLoggedIn() {
-    if (this.loggedUser ) {
-
-    }
+    return localStorage.getItem('user');
   }
 
-  login() {
-    localStorage.setItem ('Logged in', this.loggedUser)
+  login(user) {
+    localStorage.setItem ('user', this.loggedUser);
+    this.loggedUser = user;
   }
 
   logout() {
-    localStorage.removeItem('Logged in')
+    localStorage.clear();
+    this.loggedUser = undefined;
   }
 }
