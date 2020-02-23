@@ -1,0 +1,14 @@
+.container {
+position: relative;
+top: 100px;
+background: orange;
+width: 350px;
+padding: 20px;
+border-radius: 10px;
+}
+
+#center {
+text-align: center;
+font-size: x-large;
+font-weight: bolder;
+}
