@@ -12,11 +12,11 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: 'Login',
+    path: 'login',
     component: LoginComponent
   },
   {
-    path: 'User',
+    path: 'user',
     component: SingleUserComponent
   },
   {

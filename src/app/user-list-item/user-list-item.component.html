@@ -1,1 +1,5 @@
-<li class="userListItems">{{user}}</li>
+<li class="userListItems">
+    <a [routerLink]="[ '/user' ]" routerLinkActive="active" [style.color]="textColor" >{{user}}</a>
+</li>
+
+
