@@ -20,7 +20,7 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: 'user',
+    path: 'user/:id',
     component: SingleUserComponent
   },
   {
