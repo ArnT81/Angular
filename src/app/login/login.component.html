@@ -1,10 +1,24 @@
-<div class="login">
-    <form class="px-4 py-3">
-        <div class="form-group">
-            <label for="exampleDropdownFormEmail1">Please login</label>
-            <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="username"
-                [(ngModel)]="userName" name="username">
-        </div>
-        <button type="submit" class="btn btn-success" (click)="login()">Log in</button>
-    </form>
-</div>
+<ng-container *ngIf="checkUser() == true; then thenTemplate; else elseTemplate"></ng-container>
+<ng-template #thenTemplate>
+    <div class="logout">
+        <form class="px-4 py-3">
+            <div class="form-group">
+                <p>You are already logged in</p>
+            </div>
+            <button type="submit" class="btn btn-success" (click)="logout()">Logout</button>
+        </form>
+    </div>
+</ng-template>
+
+<ng-template #elseTemplate>
+    <div class="login">
+        <form class="px-4 py-3">
+            <div class="form-group">
+                <label for="exampleDropdownFormEmail1">Please login</label>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="username"
+                    [(ngModel)]="userName" name="username">
+            </div>
+            <button type="submit" class="btn btn-success" (click)="login()">Log in</button>
+        </form>
+    </div>
+</ng-template>

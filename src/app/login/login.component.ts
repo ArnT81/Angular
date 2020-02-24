@@ -9,17 +9,21 @@ import { AuthService } from '../auth.service';
 export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
+  userName:string ='';
 
   ngOnInit() {
 
   }
 
   login(): void {
-    this.authService.login('John Doe')
+    this.authService.login(this.userName)
   }
 
   logout(): void {
     this.authService.logout()
   }
 
+  checkUser() {
+    return Boolean(this.authService.checkIfLoggedIn())
+  }
 }

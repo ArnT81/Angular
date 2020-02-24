@@ -5,7 +5,7 @@ import { AdminFull } from './models/admin-full.model';
   providedIn: 'root'
 })
 export class AuthService {
-  loggedUser:string;
+  loggedUser: string;
 
   public admins: AdminFull[] = [
     {
@@ -23,7 +23,7 @@ export class AuthService {
   ];
 
   constructor() {
-    console.log('login injected');
+
   }
 
   checkIfLoggedIn() {
@@ -31,7 +31,7 @@ export class AuthService {
   }
 
   login(user) {
-    localStorage.setItem ('user', this.loggedUser);
+    localStorage.setItem('user', this.loggedUser);
     this.loggedUser = user;
   }
 
