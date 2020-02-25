@@ -1,7 +1,6 @@
 .login {
     position: relative;
     width: 350px;
-    height: 156px;
     top: 30px;
     left: 29%;
     background: #eaeef0;
@@ -16,4 +15,12 @@
     left: 36.1%;
     background: #eaeef0;
     border-radius: 4px;
+}
+
+.ng-invalid:not(Form).ng-touched:not(Form) {
+border: 1px solid red;
+}
+
+.alert {
+margin-top: 10px;
 }

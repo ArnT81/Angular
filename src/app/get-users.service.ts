@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GetUsersService {
-  users: object[];
+  /* users: object[]; */
   constructor() { }
 
   getUsers() {
@@ -16,9 +16,10 @@ export class GetUsersService {
         json.forEach(element => {
           users.push(json[i++])
         });
+        return users
         /* console.log(users) */
       })
-    return this.users
+    
   }
 }
 /*      username, name, city, street, zipcode

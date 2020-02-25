@@ -33,7 +33,8 @@ export class DashboardComponent implements OnInit {
   }
 
   getJSONUsers() {
-    this.get.getUsers()
+  this.get.getUsers()
+    
   }
 
   checkUser() {
