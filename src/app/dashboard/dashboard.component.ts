@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private authService: AuthService, private get: GetUsersService) {
     this.checkUser()
-    this.getJSONUsers()
+    /* this.getJSONUsers() */
   }
 
   ngOnInit() {
@@ -32,10 +32,10 @@ export class DashboardComponent implements OnInit {
     this.userList.shift()
   }
 
-  getJSONUsers() {
+ /*  getJSONUsers() {
   this.get.getUsers()
     
-  }
+  } */
 
   checkUser() {
     return Boolean(this.authService.checkIfLoggedIn())

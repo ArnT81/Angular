@@ -16,13 +16,13 @@
             <label for="loginModal">Please login</label>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input class="form-control" type="text" required="" minlength="10" [(ngModel)]="model.email"
+                <input class="form-control" type="text" required="" minlength="10" [(ngModel)]="userName.email"
                     name="email" #email="ngModel">
                 <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
                     Incorrect email!
                 </div>
                 <label for="password">Password</label>
-                <input class="form-control" type="password" required="" minlength="10" [(ngModel)]="model.password"
+                <input class="form-control" type="password" required="" minlength="10" [(ngModel)]="userName.password"
                     name="password">
             </div>
             <button class="btn btn-success" type="submit" [disabled]="!loginForm.form.valid">Login</button>

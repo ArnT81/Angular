@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
-
+import { AdminLogin } from '../models/admin-login.model';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +8,11 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  model: AuthService = new AuthService();
-  userName:string
+  userName: AdminLogin = new AdminLogin('anders_soderberg@hotmail.com', '1234567890');
 
-  constructor(private authService: AuthService) { }
-  
+  constructor(private authService: AuthService) { 
+    
+  }
 
   ngOnInit() {
 
@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     this.authService.login(this.userName)
+    console.log(this.userName)
   }
 
   logout(): void {
