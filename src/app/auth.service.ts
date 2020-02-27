@@ -31,7 +31,7 @@ export class AuthService {
   }
 
   login(user) {
-    localStorage.setItem('user', this.loggedUser);
+    localStorage.setItem('user', user.email);
     this.loggedUser = user;
   }
 
