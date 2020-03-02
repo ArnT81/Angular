@@ -13,5 +13,3 @@ export class GetUsersService {
     return fetch(base_url + url)
   }
 }
-/*      username, name, city, street, zipcode
-*/
