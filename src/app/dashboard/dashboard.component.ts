@@ -13,11 +13,14 @@ import { GetUsersService } from '../get-users.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  userList: string[] = ['Anders Söderberg', 'Anna Söderberg', 'Alice Söderberg', 'Leonora Söderberg']
+  userList: any; 
+  
+  // userList: string[] = ['Anders Söderberg', 'Anna Söderberg', 'Alice Söderberg', 'Leonora Söderberg']
 
-  constructor(private authService: AuthService, private get: GetUsersService) {
+  constructor(private authService: AuthService, private getUsersService: GetUsersService) {
+    this.getJSONUsers();
     this.checkUser()
-    /* this.getJSONUsers() */
+   
   }
 
   ngOnInit() {
@@ -29,15 +32,23 @@ export class DashboardComponent implements OnInit {
   }
 
   removeUserFunc() {
-    this.userList.shift()
+    this.userList.shift();
   }
 
- /*  getJSONUsers() {
-  this.get.getUsers()
-    
-  } */
+  getJSONUsers() {
+    let url = 'users'
+    this.getUsersService.getUsers(url)
+      .then(response => response.json())
+      .then(json => {
+        this.userList = json;
+        console.log(this.userList);
+      })
+
+
+
+  }
 
   checkUser() {
-    return Boolean(this.authService.checkIfLoggedIn())
+    return Boolean(this.authService.checkIfLoggedIn());
   }
 }

@@ -9,7 +9,7 @@ import { SingleUserComponent } from './single-user/single-user.component';
 const routes: Routes = [
   {
     path: '',
-    component: Component
+    component: DashboardComponent
   },
   {
     path: 'login',
