@@ -13,14 +13,14 @@ import { GetUsersService } from '../get-users.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  userList: any; 
-  
+  userList: any;
+
   // userList: string[] = ['Anders Söderberg', 'Anna Söderberg', 'Alice Söderberg', 'Leonora Söderberg']
 
   constructor(private authService: AuthService, private getUsersService: GetUsersService) {
     this.getJSONUsers();
     this.checkUser()
-   
+
   }
 
   ngOnInit() {
@@ -43,9 +43,6 @@ export class DashboardComponent implements OnInit {
         this.userList = json;
         console.log(this.userList);
       })
-
-
-
   }
 
   checkUser() {
