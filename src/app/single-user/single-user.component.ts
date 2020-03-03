@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./single-user.component.css']
 })
 export class SingleUserComponent implements OnInit {
-  user: string;
+  user: any;
   id: string;
 
   constructor(private getUsersService: GetUsersService, private route: ActivatedRoute) {
@@ -19,6 +19,7 @@ export class SingleUserComponent implements OnInit {
   }
 
   ngOnInit() {
+  
   }
 
   getJSONUsers() {
@@ -26,7 +27,7 @@ export class SingleUserComponent implements OnInit {
     this.getUsersService.getUsers(url)
       .then(response => response.json())
       .then(json => {
-        this.user = json;
+        this.user = json[this.id];
         console.log(this.user)
       })
   }
