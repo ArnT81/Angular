@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { GetUsersService } from '../get-users.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-single-user',
@@ -7,15 +8,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./single-user.component.css']
 })
 export class SingleUserComponent implements OnInit {
+  user: string;
+  id: string;
 
-  constructor(private router: Router) {
-    router.events.subscribe((value) => {
-      console.log(value); // value from event
-      return value
+  constructor(private getUsersService: GetUsersService, private route: ActivatedRoute) {
+    this.getJSONUsers();
+    this.route.params.subscribe(params => {
+      this.id = params.id;
     })
   }
 
   ngOnInit() {
   }
 
+  getJSONUsers() {
+    let url = 'users'
+    this.getUsersService.getUsers(url)
+      .then(response => response.json())
+      .then(json => {
+        this.user = json;
+        console.log(this.user)
+      })
+  }
 }

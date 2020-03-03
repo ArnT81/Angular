@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private authService: AuthService, private getUsersService: GetUsersService) {
     this.getJSONUsers();
-    this.checkUser()
+    this.checkUser();
 
   }
 
@@ -41,7 +41,6 @@ export class DashboardComponent implements OnInit {
       .then(response => response.json())
       .then(json => {
         this.userList = json;
-        console.log(this.userList);
       })
   }
 

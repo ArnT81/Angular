@@ -12,7 +12,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent implements OnInit {
-  @Input() users: string[]
+  @Input() users: string[];
 
   textColor: string = 'red';
   bool: boolean = false;
