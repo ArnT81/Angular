@@ -23,7 +23,10 @@
                 </div>
                 <label for="password">Password</label>
                 <input class="form-control" type="password" required="" minlength="10" [(ngModel)]="userName.password"
-                    name="password">
+                    name="password" #password="ngModel">
+                    <div class="alert alert-danger" [hidden]="password.valid || password.pristine">
+                        Incorrect password!
+                    </div>
             </div>
             <button class="btn btn-success" type="submit" [disabled]="!loginForm.form.valid">Login</button>
         </form>
