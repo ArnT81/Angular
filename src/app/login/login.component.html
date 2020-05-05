@@ -18,13 +18,13 @@
                 <label for="email">Email</label>
                 <input class="form-control" type="text" required="" minlength="10" [(ngModel)]="userName.email"
                     name="email" #email="ngModel">
-                <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
+                <div class="alert alert-danger" [hidden]="email.valid || !email.touched">
                     Incorrect email!
                 </div>
                 <label for="password">Password</label>
                 <input class="form-control" type="password" required="" minlength="10" [(ngModel)]="userName.password"
                     name="password" #password="ngModel">
-                    <div class="alert alert-danger" [hidden]="password.valid || password.pristine">
+                    <div class="alert alert-danger" [hidden]="password.valid || !password.touched">
                         Incorrect password!
                     </div>
             </div>
