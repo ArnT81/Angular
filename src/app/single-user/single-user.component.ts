@@ -8,18 +8,20 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./single-user.component.css']
 })
 export class SingleUserComponent implements OnInit {
-  user: any;
+  user: object;
   id: string;
+  userId: number;
 
   constructor(private getUsersService: GetUsersService, private route: ActivatedRoute) {
     this.getJSONUsers();
     this.route.params.subscribe(params => {
       this.id = params.id;
+      this.userId = params.id -1
     })
   }
 
   ngOnInit() {
-  
+    console.log(typeof this.user)
   }
 
   getJSONUsers() {
@@ -27,8 +29,7 @@ export class SingleUserComponent implements OnInit {
     this.getUsersService.getUsers(url)
       .then(response => response.json())
       .then(json => {
-        this.user = json[this.id];
-        console.log(this.user)
+        this.user = json[this.userId];
       })
   }
 }
