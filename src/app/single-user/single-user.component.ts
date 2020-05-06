@@ -11,17 +11,23 @@ export class SingleUserComponent implements OnInit {
   user: object;
   id: string;
   userId: number;
+  address: any = {
+    city: 'Bollebygd',
+    street: 'Pinnvägen',
+    suite: '342-50'
+  }
 
   constructor(private getUsersService: GetUsersService, private route: ActivatedRoute) {
     this.getJSONUsers();
     this.route.params.subscribe(params => {
       this.id = params.id;
       this.userId = params.id -1
+      console.log(params)
     })
   }
 
   ngOnInit() {
-    console.log(typeof this.user)
+    
   }
 
   getJSONUsers() {
@@ -30,6 +36,10 @@ export class SingleUserComponent implements OnInit {
       .then(response => response.json())
       .then(json => {
         this.user = json[this.userId];
+        console.log(this.user)
+        if(this.userId > 10) {
+          console.log('SUCCESS')
+        }
       })
   }
 }

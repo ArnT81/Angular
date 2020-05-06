@@ -1,28 +1,23 @@
 import { Injectable } from '@angular/core';
 import { AdminFull } from './models/admin-full.model';
+import { Router } from '@angular/router'
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
   loggedUser: string;
 
-  public admins: AdminFull[] = [
+  public admins: AdminFull =
     {
-      firstName: 'John',
-      lastName: 'Doe',
-      email: 'john.doe@email.com',
+      firstName: 'Anders',
+      lastName: 'Söderberg',
+      email: 'anders_soderberg@hotmail.com',
       password: '1234567890'
-    },
-    {
-      firstName: 'Kylie',
-      lastName: 'Johnson',
-      email: 'kylie.johnson@email.com',
-      password: '0987654321'
-    }
-  ];
+    };
 
-  constructor() {
+  constructor( private router: Router) {
 
   }
 
@@ -31,8 +26,11 @@ export class AuthService {
   }
 
   login(user) {
-    localStorage.setItem('user', user.email);
-    this.loggedUser = user;
+    if (user.email == this.admins.email && user.password == this.admins.password) {
+      localStorage.setItem('user', user.email);
+      this.loggedUser = user;
+      this.router.navigate(['/dashboard'])
+    }
   }
 
   logout() {

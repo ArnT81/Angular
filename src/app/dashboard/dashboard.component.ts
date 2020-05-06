@@ -14,13 +14,12 @@ import { GetUsersService } from '../get-users.service';
 })
 export class DashboardComponent implements OnInit {
   userList: any;
-
-  // userList: string[] = ['Anders Söderberg', 'Anna Söderberg', 'Alice Söderberg', 'Leonora Söderberg']
+  number: number;
 
   constructor(private authService: AuthService, private getUsersService: GetUsersService) {
     this.getJSONUsers();
     this.checkUser();
-
+  
   }
 
   ngOnInit() {
@@ -28,7 +27,11 @@ export class DashboardComponent implements OnInit {
   }
 
   addUserFunc(addUser: string) {
-    this.userList.push(addUser);
+    this.userList.push({ id: this.number, name: addUser });
+    console.log('new user: ', addUser)
+    console.log('typeof new user: ', typeof addUser)
+    this.number =  this.userList.length +1
+    console.log(this.userList)
   }
 
   removeUserFunc() {
@@ -41,6 +44,7 @@ export class DashboardComponent implements OnInit {
       .then(response => response.json())
       .then(json => {
         this.userList = json;
+        this.number =  this.userList.length +1;
       })
   }
 

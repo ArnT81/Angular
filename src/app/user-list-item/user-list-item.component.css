@@ -5,8 +5,9 @@ border: 1.5px solid lightgray;
 background-color: white;
 padding: 10px;
 margin-bottom: 12px;
+text-align: center;
 }
 
- a {
+a {
 text-decoration: none;
 }
