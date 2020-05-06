@@ -3,6 +3,11 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
+/**
+  * @Logic Service for API fetch. 
+*/
+
 export class GetUsersService {
   constructor() { }
 

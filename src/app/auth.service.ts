@@ -6,6 +6,11 @@ import { Router } from '@angular/router'
   providedIn: 'root'
 })
 
+/**
+  * @object to compare input from login with Adminfull.
+  * @logic to check if user is logged in and to log in and out of app. 
+*/
+
 export class AuthService {
   loggedUser: string;
 

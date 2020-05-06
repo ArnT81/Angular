@@ -11,6 +11,12 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './users-list.component.html',
   styleUrls: ['./users-list.component.css']
 })
+
+/**
+  * @variable textColor for ability to toggle the color of user-list-items, bool for the togglefunction.
+  * @recieves users to display in user-list-items. 
+*/
+
 export class UsersListComponent implements OnInit {
   @Input() users: string[];
 
@@ -18,9 +24,11 @@ export class UsersListComponent implements OnInit {
   bool: boolean = false;
   
   constructor() {
+
   }
 
   ngOnInit() {
+
   }
 
   toggleColor() {

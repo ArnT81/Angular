@@ -7,27 +7,28 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './single-user.component.html',
   styleUrls: ['./single-user.component.css']
 })
+
+/**
+  * @variable declare user for api-request, uses id in params to show right user
+  * in view and userId to mock id for created users
+  * @recieves users from json-placeholder 
+*/
+
 export class SingleUserComponent implements OnInit {
   user: object;
   id: string;
   userId: number;
-  address: any = {
-    city: 'Bollebygd',
-    street: 'Pinnvägen',
-    suite: '342-50'
-  }
-
+  
   constructor(private getUsersService: GetUsersService, private route: ActivatedRoute) {
     this.getJSONUsers();
     this.route.params.subscribe(params => {
       this.id = params.id;
       this.userId = params.id -1
-      console.log(params)
     })
   }
 
   ngOnInit() {
-    
+
   }
 
   getJSONUsers() {
@@ -36,10 +37,6 @@ export class SingleUserComponent implements OnInit {
       .then(response => response.json())
       .then(json => {
         this.user = json[this.userId];
-        console.log(this.user)
-        if(this.userId > 10) {
-          console.log('SUCCESS')
-        }
       })
   }
 }

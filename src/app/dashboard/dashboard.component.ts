@@ -19,19 +19,15 @@ export class DashboardComponent implements OnInit {
   constructor(private authService: AuthService, private getUsersService: GetUsersService) {
     this.getJSONUsers();
     this.checkUser();
-  
   }
 
   ngOnInit() {
 
   }
-
+  
   addUserFunc(addUser: string) {
     this.userList.push({ id: this.number, name: addUser });
-    console.log('new user: ', addUser)
-    console.log('typeof new user: ', typeof addUser)
     this.number =  this.userList.length +1
-    console.log(this.userList)
   }
 
   removeUserFunc() {

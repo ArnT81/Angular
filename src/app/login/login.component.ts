@@ -8,6 +8,12 @@ import { AdminLogin } from '../models/admin-login.model';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
+/**
+  * @variable compares input from input to existing admin via callback
+  * @recieves callbacks to authservice functions 
+*/
+
 export class LoginComponent implements OnInit {
   userName: AdminLogin = new AdminLogin('','');
   
